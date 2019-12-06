@@ -1,26 +1,11 @@
-// event object argument e,evt
-// info about triggered event
-// event.type
-// event.currentTarget
-// this keyword
-// preventDefault() - prevents default behaviour
+const btnOne = document.querySelector('.btn-one');
+const btnTwo = document.querySelector('.btn-two');
 
-const heading = document.querySelector('h1');
-const btn = document.querySelector('.btn');
-const link = document.getElementById('link');
-
-heading.addEventListener('click', event => {
-  console.log(event.currentTarget);
-  console.log(this);
+btnOne.addEventListener('click', function(e) {
+  console.log('event target', event.target);
+  console.log('current target', event.currentTarget);
 });
-
-btn.addEventListener('click', function(event) {
-  event.currentTarget.classList.add('blue');
-  console.log(event.type);
+btnTwo.addEventListener('click', function(e) {
+  console.log('event target', event.target);
+  console.log('current target', event.currentTarget);
 });
-
-function someFunc(e) {
-  e.preventDefault();
-}
-
-link.addEventListener('click', someFunc);
