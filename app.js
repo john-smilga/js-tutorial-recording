@@ -1,14 +1,22 @@
-// currentTarget - always refers to the element to which the event handler has been attached to
-// target - identifies the element on which the event occured
+// event propogation - order the events are fired
+// event bubbling - clicked element first then bubbles up -- default
+// event capturing - fires at the root and fires until reaches target
 
-const btns = document.querySelectorAll('.btn');
+const container = document.querySelector('.container');
+const list = document.querySelector('.list-items');
 
-btns.forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    // console.log(e.currentTarget);
-    // e.currentTarget.style.color = 'green';
-    console.log('current', e.currentTarget);
-    console.log('target', e.target);
-    e.target.style.color = 'green';
-  });
-});
+function showBubbling(e) {
+  console.log('current target', e.currentTarget);
+  // console.log('target', e.target);
+  // if (e.target.classList.contains('link')) {
+  //   console.log('you clicked on the link');
+  // }
+}
+function stopPropogation(e) {
+  e.stopPropagation();
+}
+
+list.addEventListener('click', showBubbling, { capture: true });
+container.addEventListener('click', showBubbling, { capture: true });
+document.addEventListener('click', showBubbling, { capture: true });
+window.addEventListener('click', showBubbling, { capture: true });
