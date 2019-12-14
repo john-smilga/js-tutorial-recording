@@ -1,30 +1,26 @@
-// var - update, function scoped
+// var, let , const
+// define, update, redifine
+// const cannot mutate primitive type
 
-// var name = 'john';
-// console.log(name);
-// name = 'peter';
-// console.log(name);
+// define
+var number = 100;
+// console.log(number);
+// update
+number = 200;
+// console.log(number);
+// redifine
+var number = 'orange';
+// console.log(number);
 
-function sayHello() {
-  var name = 'anna';
-  var lastName = 'smith';
-  console.log(`Hello there ${name} ${lastName}`);
-}
-sayHello();
+let amount = 100;
+// console.log(amount);
+amount = 200;
+// console.log(amount);
+// let amount = 'orange';
 
-// console.log(name);
-// console.log(lastName);
-
-var value = 10;
-
-if (value > 2) {
-  var name = 'anna';
-  var value = 'pants';
-  console.log(`Hello there ${name}`);
-}
-console.log(name);
-console.log(value);
-
-if (value > 5) {
-  console.log('what just happened');
-}
+const total = 100;
+// console.log(total);
+// total = 200;
+const person = { name: 'bob' };
+person.name = 'john';
+console.log(person.name);
