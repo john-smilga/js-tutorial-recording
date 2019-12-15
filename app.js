@@ -1,26 +1,17 @@
-// var, let , const
-// define, update, redifine
-// const cannot mutate primitive type
+// Template Strings/Literals
 
-// define
-var number = 100;
-// console.log(number);
-// update
-number = 200;
-// console.log(number);
-// redifine
-var number = 'orange';
-// console.log(number);
+const name = "bob";
+const lastName = "sanders";
+const age = 25;
 
-let amount = 100;
-// console.log(amount);
-amount = 200;
-// console.log(amount);
-// let amount = 'orange';
-
-const total = 100;
-// console.log(total);
-// total = 200;
-const person = { name: 'bob' };
-person.name = 'john';
-console.log(person.name);
+const phrase =
+  "My full name is " +
+  name +
+  " " +
+  lastName +
+  " and I'm " +
+  age +
+  " years old.";
+const phrase2 = `My full name is ${name} ${lastName.toUpperCase()} and I'm ${age *
+  2} years old`;
+console.log(phrase2);
