@@ -1,17 +1,24 @@
 // Template Strings/Literals
+// `` backticks above tab key left of 1 key
 
-const name = "bob";
-const lastName = "sanders";
-const age = 25;
+const person = {
+  name: "kyle",
+  job: "developer",
+  hobbies: ["surfing", "baking", "bowling"],
+};
 
-const phrase =
-  "My full name is " +
-  name +
-  " " +
-  lastName +
-  " and I'm " +
-  age +
-  " years old.";
-const phrase2 = `My full name is ${name} ${lastName.toUpperCase()} and I'm ${age *
-  2} years old`;
-console.log(phrase2);
+const result = document.getElementById("result");
+
+// result.innerHTML = "<h2>" + person.name + "</h2>" + "<p>" + person.job + "</p>";
+
+result.innerHTML = `
+<h2>${person.name}</h2>
+<p>${person.job}</p>
+<ul>
+${person.hobbies
+  .map(item => {
+    return `<li>${item}</li>`;
+  })
+  .join("")}
+</ul>
+`;
