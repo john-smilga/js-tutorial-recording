@@ -1,24 +1,19 @@
 // Template Strings/Literals
 // `` backticks above tab key left of 1 key
+// tagged template
 
-const person = {
-  name: "kyle",
-  job: "developer",
-  hobbies: ["surfing", "baking", "bowling"],
-};
+const author = "Some Author";
+const statement = "Some Statement";
+
+const quote = highlight`Here is the ${statement} by ${author} and it could not be more true`;
+console.log(quote);
+
+function highlight(text, ...vars) {
+  let awesomeText = text.map((item, index) => {
+    return `${item} <strong class="blue">${vars[index] || ""}</strong>`;
+  });
+  return awesomeText.join("");
+}
 
 const result = document.getElementById("result");
-
-// result.innerHTML = "<h2>" + person.name + "</h2>" + "<p>" + person.job + "</p>";
-
-result.innerHTML = `
-<h2>${person.name}</h2>
-<p>${person.job}</p>
-<ul>
-${person.hobbies
-  .map(item => {
-    return `<li>${item}</li>`;
-  })
-  .join("")}
-</ul>
-`;
+result.innerHTML = quote;
