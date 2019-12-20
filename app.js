@@ -1,19 +1,46 @@
-// Template Strings/Literals
-// `` backticks above tab key left of 1 key
-// tagged template
+// Arrow Functions or Fat Arrow Functions
+// no name
+// no function keyword
+// parameters and return statement
+//no parameters
 
-const author = "Some Author";
-const statement = "Some Statement";
+// function sayHi() {
+//   console.log("hello");
+// }
+// sayHi();
+// const hello = function(name) {
+//   console.log(`Hello ${name}`);
+// };
+// hello("bob");
+// one parameter
+// function triple(value) {
+//   return value * 3;
+// }
 
-const quote = highlight`Here is the ${statement} by ${author} and it could not be more true`;
-console.log(quote);
+const hello = () => console.log("hello");
+hello();
 
-function highlight(text, ...vars) {
-  let awesomeText = text.map((item, index) => {
-    return `${item} <strong class="blue">${vars[index] || ""}</strong>`;
-  });
-  return awesomeText.join("");
-}
+const double = value => value * 2;
+const num = double(4);
+console.log(num);
 
-const result = document.getElementById("result");
-result.innerHTML = quote;
+// two parameters and more than one line
+const multiply = (num1, num2) => {
+  const result = num1 * num2;
+  // more code here
+  return result;
+};
+const sum = multiply(3, 4);
+console.log(sum);
+
+// return object
+const object = () => ({ name: "bob", age: 25 });
+const person = object();
+console.log(person);
+// arrow functions as callback functions
+const numbers = [1, 2, 3, 4, 5, 6];
+const big = numbers.filter(number => number > 2);
+console.log(big);
+
+const btn = document.querySelector(".btn");
+btn.addEventListener("click", () => console.log("you clicked me"));
