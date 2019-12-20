@@ -1,46 +1,26 @@
 // Arrow Functions or Fat Arrow Functions
-// no name
-// no function keyword
-// parameters and return statement
-//no parameters
+// 'this' keyword
 
-// function sayHi() {
-//   console.log("hello");
-// }
-// sayHi();
-// const hello = function(name) {
-//   console.log(`Hello ${name}`);
-// };
-// hello("bob");
-// one parameter
-// function triple(value) {
-//   return value * 3;
-// }
-
-const hello = () => console.log("hello");
-hello();
-
-const double = value => value * 2;
-const num = double(4);
-console.log(num);
-
-// two parameters and more than one line
-const multiply = (num1, num2) => {
-  const result = num1 * num2;
-  // more code here
-  return result;
+const bob = {
+  firstName: "bob",
+  lastName: "smith",
+  sayName: function() {
+    console.log(this);
+    setTimeout(() => {
+      console.log(this);
+      console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
+    }, 1000);
+  },
 };
-const sum = multiply(3, 4);
-console.log(sum);
 
-// return object
-const object = () => ({ name: "bob", age: 25 });
-const person = object();
-console.log(person);
-// arrow functions as callback functions
-const numbers = [1, 2, 3, 4, 5, 6];
-const big = numbers.filter(number => number > 2);
-console.log(big);
+const anna = {
+  firstName: "anna",
+  lastName: "sanders",
+  sayName: () => {
+    console.log(this);
+    console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
+  },
+};
 
-const btn = document.querySelector(".btn");
-btn.addEventListener("click", () => console.log("you clicked me"));
+bob.sayName();
+anna.sayName();
