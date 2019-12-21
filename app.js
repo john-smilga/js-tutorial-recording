@@ -1,15 +1,28 @@
 // Destructuring
 // faster/easier way to access/unpack values from arrays
 // objects into variables
-// Arrays
+// Objects
 
-const fruits = ['orange', 'banana', 'lemon'];
-const friends = ['john', 'peter', 'bob', 'anna', 'kelly'];
+const bob = {
+  first: 'bob',
+  last: 'sanders',
+  city: 'chicago',
+  siblings: {
+    sister: 'jane',
+  },
+};
 
-const orange = fruits[0];
-const banana = fruits[1];
-const lemon = fruits[2];
-console.log(orange, banana, lemon);
+const {
+  first: firstName,
+  last,
+  city,
+  zip,
+  siblings: { sister: favoriteSibling },
+} = bob;
+console.log(firstName, last, city, zip, favoriteSibling);
 
-const [john, , enemy, bob, susan] = friends;
-console.log(john, enemy, bob, susan);
+// const firstName = bob.first;
+// const lastName = bob.last;
+// const sister = bob.siblings.sister;
+
+// console.log(firstName, lastName, sister);
