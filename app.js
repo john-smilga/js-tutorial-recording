@@ -1,23 +1,19 @@
-// for of - loops through the values of an iterable object
-// String, Array,Map,Set etc  - NOT OBJECT
+// Web Storage API - provided by browser
+// session storage, local storage
+// setItem, getItem , removeItem, clear
 
-const fruits = ['apple', 'orange', 'banana', 'peach'];
-const longName = 'John Smith Pepper III';
-let shortName = '';
-for (const letter of longName) {
-  // console.log(letter);
-  if (letter === ' ') {
-    continue;
-  } else {
-    shortName += letter;
-  }
-}
-// console.log(shortName);
+// localStorage.setItem('name','john')
+// sessionStorage.setItem('name','john')
 
-for (const fruit of fruits) {
-  if (fruit === 'banana') {
-    break;
-    continue;
-  }
-  console.log(fruit);
-}
+localStorage.setItem('name', 'john');
+localStorage.setItem('friend', 'peter');
+localStorage.setItem('job', 'developer');
+localStorage.setItem('address', 'street 123');
+
+const name = localStorage.getItem('name');
+console.log(name);
+
+localStorage.removeItem('name');
+const anotherName = localStorage.getItem('name');
+console.log(anotherName);
+localStorage.clear();
