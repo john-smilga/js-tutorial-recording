@@ -1,12 +1,23 @@
-// default parameters, arrow function gotchas
+// for of - loops through the values of an iterable object
+// String, Array,Map,Set etc  - NOT OBJECT
 
-const john = 'John';
-const peter = 'Peter';
-
-function sayHi(person = 'Susan') {
-  console.log(`Hi ${person}`);
+const fruits = ['apple', 'orange', 'banana', 'peach'];
+const longName = 'John Smith Pepper III';
+let shortName = '';
+for (const letter of longName) {
+  // console.log(letter);
+  if (letter === ' ') {
+    continue;
+  } else {
+    shortName += letter;
+  }
 }
-const sayHello = (person = 'BOB') => console.log(`Hello ${person}`);
+// console.log(shortName);
 
-sayHi();
-sayHello(peter);
+for (const fruit of fruits) {
+  if (fruit === 'banana') {
+    break;
+    continue;
+  }
+  console.log(fruit);
+}
