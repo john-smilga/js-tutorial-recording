@@ -1,19 +1,21 @@
-// JSON.stringify(), JSON.parse
+// Spread Operator ...
+// Allows an iterable to spread/expand individually inside reciever
+// Split into single items and copy them.
 
-const friends = ['john', 'peter', 'bob'];
-localStorage.setItem('friends', JSON.stringify(friends));
+const udemy = 'udemy';
+const letters = [...udemy];
+console.log(letters);
 
-const values = JSON.parse(localStorage.getItem('friends'));
-console.log(values[2]);
+const boys = ['john', 'peter', 'bob'];
+const girls = ['susan', 'anna'];
+const bestFriend = 'arnold';
 
-let fruits;
+const friends = [...boys, bestFriend, ...girls];
+console.log(friends);
 
-if (localStorage.getItem('fruits')) {
-  fruits = JSON.parse(localStorage.getItem('fruits'));
-} else {
-  fruits = [];
-}
-console.log(fruits);
-// fruits.push('apple');
-fruits.push('orange');
-localStorage.setItem('fruits', JSON.stringify(fruits));
+// const newFriends = [...friends];
+// reference
+const newFriends = friends;
+newFriends[0] = 'karina';
+console.log(newFriends);
+console.log(friends);
