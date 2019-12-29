@@ -16,7 +16,16 @@ console.log(rest);
 const getPerson = (name, ...rest) => {
   console.log(name);
   console.log(rest);
+  let total = 0;
+
+  for (const score of rest) {
+    total += score;
+  }
+
+  console.log(`${name}'s average score is ${total / rest.length}`);
 };
 
-getPerson(person.name, person.lastName, person.job);
-getPerson(person.name, ...fruit);
+const scores = [87, 67, 56, 89];
+
+getPerson(person.name, 34, 56, 78, 90);
+getPerson(person.name, ...scores);
