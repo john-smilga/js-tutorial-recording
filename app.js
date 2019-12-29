@@ -2,11 +2,8 @@
 // Allows an iterable to spread/expand individually inside reciever
 // Split into single items and copy them.
 
-const headings = document.querySelectorAll('h1');
-const result = document.getElementById('result');
-const text = [...headings]
-  .map(item => `<span>${item.textContent}</span>`)
-  .join('');
-console.log(text);
+const numbers = [23, 45, 66, 88, 2345];
+// const biggest = Math.max(2, 3, 3, 4);
+const biggest = Math.max(...numbers);
 
-result.innerHTML = text;
+console.log(biggest);
