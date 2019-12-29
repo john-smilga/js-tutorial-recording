@@ -1,9 +1,22 @@
-// Spread Operator ...
-// Allows an iterable to spread/expand individually inside reciever
-// Split into single items and copy them.
+// Rest Operator ...
+// gathers/collects the items
 
-const numbers = [23, 45, 66, 88, 2345];
-// const biggest = Math.max(2, 3, 3, 4);
-const biggest = Math.max(...numbers);
+//arrays
+const fruit = ['apple', 'orange', 'lemon'];
+const [first, ...random] = fruit;
+console.log(first, random);
 
-console.log(biggest);
+//objects
+const person = { name: 'john', lastName: 'smith', job: 'developer' };
+const { job, ...rest } = person;
+// const { ...rest,job  } = person;
+console.log(rest);
+
+//functions
+const getPerson = (name, ...rest) => {
+  console.log(name);
+  console.log(rest);
+};
+
+getPerson(person.name, person.lastName, person.job);
+getPerson(person.name, ...fruit);
