@@ -3,17 +3,18 @@
 // from - returns Array Object from any object with a length property or an iterable object
 // from turns array-like/ish into array - string,nodeList,Set
 
-const udemy = 'udemy';
-// console.log(Array.from(udemy));
+const p = document.querySelectorAll('p');
+const result = document.getElementById('result');
+const second = document.getElementById('second');
 
-function getTotal() {
-  // console.log(arguments);
-  // console.log(Array.from(arguments));
-  let total = Array.from(arguments).reduce(
-    (total, currNum) => (total += currNum),
-    0
-  );
-  console.log(total);
-}
+let newText = Array.from(p);
+newText = newText.map(item => `<span>${item.textContent}</span>`).join(' ');
 
-getTotal(10, 11, 24);
+result.innerHTML = newText;
+
+const text = Array.from(document.querySelectorAll('p'), item => {
+  // return 'hello world';
+  return `<span> ${item.textContent}</span>`;
+}).join(' ');
+
+second.innerHTML = text;
