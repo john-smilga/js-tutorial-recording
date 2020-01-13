@@ -1,20 +1,31 @@
-// Array.from and Array.of - NOT ON THE PROTOTYPE
+// find - gets specific item.
+// findIndex - get's index of the item;
+// every - every item in the array
+// some - at least one item
 
-// from - returns Array Object from any object with a length property or an iterable object
-// from turns array-like/ish into array - string,nodeList,Set
+const people = [
+  { id: 1, name: 'john' },
+  { id: 2, name: 'peter' },
+  { id: 3, name: 'anna' },
+];
+const grades = ['A', 'B', 'A', 'B', 'C'];
+const goodGrades = ['A', 'B', 'A', 'B'];
 
-const p = document.querySelectorAll('p');
-const result = document.getElementById('result');
-const second = document.getElementById('second');
+// const anna = people.filter(person => person.name === 'anna');
+// console.log(anna);
+// console.log(anna[0].name);
+// console.log(anna[0].id);
 
-let newText = Array.from(p);
-newText = newText.map(item => `<span>${item.textContent}</span>`).join(' ');
+const anna = people.find(person => person.name === 'anna');
+// console.log(anna.name);
+// console.log(anna.id);
 
-result.innerHTML = newText;
+const person = people.findIndex(item => item.id === 3);
+// console.log(person);
+const newPeople = people.slice(0, person);
+// console.log(newPeople);
 
-const text = Array.from(document.querySelectorAll('p'), item => {
-  // return 'hello world';
-  return `<span> ${item.textContent}</span>`;
-}).join(' ');
-
-second.innerHTML = text;
+const allGoodGrades = goodGrades.every(grade => grade !== 'C');
+console.log(allGoodGrades);
+const oneBadGrade = goodGrades.some(grade => grade === 'C');
+console.log(oneBadGrade);
